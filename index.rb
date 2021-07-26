@@ -1,4 +1,9 @@
 require 'cgi'
+require 'json'
+
+hash = File.open('./memo.json') do |file|
+    JSON.load(file)
+end
 
 cgi = CGI.new "html5"
 
@@ -9,7 +14,8 @@ cgi.out do
         } +
         cgi.body {
             cgi.h1 {"memoManager"} +
-            cgi.hr
+            cgi.hr +
+            cgi.p {hash["contents"]}
         }
     end
 end

@@ -1,7 +1,8 @@
 require 'cgi'
 require 'json'
 
-hash = File.open('./memo.json') do |file|
+url = "memo.json"
+hash = File.open(url) do |file|
     JSON.load(file)
 end
 
@@ -14,6 +15,8 @@ cgi.out do
         } +
         cgi.body {
             cgi.h1 {"memoManager"} +
+            cgi.hr +
+            # cgi.a({href: "edit?json=#{url}"}) +
             cgi.hr +
             cgi.p {hash["contents"]}
         }

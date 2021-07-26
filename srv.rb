@@ -10,5 +10,6 @@ srv = WEBrick::HTTPServer.new({
 
 # srv.mount('/', WEBrick::HTTPServlet::FileHandler, 'index.html')
 srv.mount('/', WEBrick::HTTPServlet::CGIHandler, 'index.rb')
+srv.mount('/edit', WEBrick::HTTPServlet::CGIHandler, 'edit.rb')
 
 srv.start

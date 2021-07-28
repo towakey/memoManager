@@ -1,12 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    redcarpet (3.5.1)
     webrick (1.7.0)
 
 PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  redcarpet
   webrick
 
 BUNDLED WITH
